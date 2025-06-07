@@ -1,38 +1,60 @@
 # Babynama - Frontend Developer Intern Assignment
 
-Welcome to the Babynama internship assignment! This short project is designed to simulate a real-world task and help us understand your skills and thought process.
 
-**Objective:** Build a small, self-contained feature in Next.js.  
-**Time Allotment:** 2-4 hours.
+Welcome to my implementation of the “Upcoming Live Webinars” feature for Babynama.
 
 ---
 
-### **Part 1: Getting Started & The Task**
+### 🔗 Live URL
 
-1.  **Repository Setup:** You have already created a repository from this template. Now, install the dependencies:
-    ```bash
-    npm install
-    ```
-2.  **The User Story:** Your goal is to implement the following feature:
-    > "As a busy parent exploring Babynama's resources, I want to see a simple, clear list of upcoming live webinars on a dedicated page so I can quickly see what's available."
-
-3.  **Your Implementation Tasks:**
-    * **Create a Page:** Build a new page at the `/webinars` route.
-    * **Display Data:** You don't need an API. Create a mock data array directly in your page file. The array should contain at least three webinar objects, each with an `id`, `title`, `speaker` (e.g., "Dr. Sumitra Meena"), and `date`. Render this data as a list of styled cards on the `/webinars` page.
-    * **Add Interactivity:** Add a "View Details" button to each card. When clicked, it should log the `id` of that webinar to the browser's console (e.g., `console.log("Viewing details for webinar ID: 3")`).
+[https://your-project-name.vercel.app/webinars](https://your-project-name.vercel.app/webinars)
 
 ---
 
-### **Part 2: Submission**
+## 🛠️ Choices Made
 
-After you've finished coding, please complete the following two steps.
+- **App Router adoption**  
+  I used Next.js’s App Router (`/app` directory) instead of the older Pages Router to take advantage of React Server Components and the built‑in layout system.
 
-1.  **Deploy Your Work:** Deploy your project to Vercel (it's free).
-2.  **Complete this README:** **This is the most important step.** Edit this `README.md` file in your repository to include:
-    * **Live URL:** [Add your Vercel deployment link here]
-    * **Choices Made:** [Briefly explain one technical choice you made]
-    * **Roadblock & Learning:** [Describe one small thing you had to look up and how you solved it]
-    * **Screenshot:**
-        ![Your Screenshot Here](https://via.placeholder.com/600x400.png?text=Paste+Screenshot+of+Your+App+Here)
+- **TailwindCSS for styling & responsiveness**  
+  I chose TailwindCSS to rapidly prototype the design with utility classes, ensuring consistent spacing, typography, and responsive layouts without writing custom CSS.
 
-To submit, please share the link to your finished GitHub repository with us. Good luck!
+- **Separate `WebinarCard` component**  
+  I pulled the card UI into its own `WebinarCard` component (in `/components/WebinarCard.tsx`) to keep the code modular, make it easier to maintain, and allow reuse of the card layout elsewhere in the app.
+
+- **Dedicated `/components` folder**  
+  All reusable UI components (like `WebinarCard`) live in a top‑level `/components` directory, keeping the project structure organized and making components easy to import across routes.
+
+- **“View Webinars” navigation button**  
+  On the home page (`/`), I added a “View Webinars” button using Next’s `<Link>` component, giving users a one‑click path to the webinars page.
+
+- **TypeScript interfaces**  
+  Defining a `Webinar` interface ensures type safety when passing data between the page and card component, catching any mismatches at compile time.
+
+---
+
+## 🧱 Roadblock & Learning
+
+- **Tracking `.next` folder in Git**  
+  I struggled with Git still tracking the `.next` build output even after it was already included in `.gitignore`. I solved it by running:
+  ```bash
+  git rm -r --cached .next
+  git commit -m "chore: stop tracking .next build output"
+  ```
+  After that, the .next folder was correctly ignored.
+
+- **Date formatting**  
+  I wanted to display dates in a more human‑friendly format (e.g. “July 10, 2025”), so I researched the `Intl.DateTimeFormat` API. Implementing it allowed me to convert the ISO date strings to localized, readable dates.
+
+- **Accessibility considerations**  
+  After reading about accessible buttons, I added `focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500` to the “View Details” buttons, ensuring keyboard users can see focus states.
+
+---
+
+## 📸 Screenshot
+
+![Webinars Page Screenshot](./screenshots/webinars-page.png)
+
+---
+
+Thank you for reviewing my work!  
