@@ -7,7 +7,7 @@ Welcome to my implementation of the “Upcoming Live Webinars” feature for Bab
 
 ### 🔗 Live URL
 
-[https://your-project-name.vercel.app/webinars](https://your-project-name.vercel.app/webinars)
+[https://babynama-assignment-chi.vercel.app/](https://babynama-assignment-chi.vercel.app/)
 
 ---
 
@@ -53,7 +53,8 @@ Welcome to my implementation of the “Upcoming Live Webinars” feature for Bab
 
 ## 📸 Screenshot
 
-![Webinars Page Screenshot](./screenshots/webinars-page.png)
+![Webinars Page Screenshot](https://github.com/user-attachments/assets/d75e90d2-98ac-4bbe-aef4-7dc39f3f2d99)
+![Webinars Page Screenshot](https://github.com/user-attachments/assets/fb9fdc74-badf-45c6-a330-24beb1d1c8e5)
 
 ---
 
